@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AWSCredentialsFactory {
+public class AwsCredentialsFactory {
 
-  private static final Logger LOG = LoggerFactory.getLogger(AWSCredentialsFactory.class);
+  private static final Logger LOG = LoggerFactory.getLogger(AwsCredentialsFactory.class);
 
   public AWSCredentials createDefaultCredentials() {
     try {

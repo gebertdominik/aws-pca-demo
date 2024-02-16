@@ -23,21 +23,12 @@ public class IssueCertificateRequestFactory {
     this.awsConfig = awsConfig;
   }
 
-  public IssueCertificateRequest createIssueCertificateRequest(String csr) {
+  public IssueCertificateRequest create(String strCSR) {
     // Create a certificate request:
     IssueCertificateRequest req = new IssueCertificateRequest();
 
     // Set the CA ARN.
     req.withCertificateAuthorityArn(awsConfig.getCertificateAuthorityArn());
-
-    // Specify the certificate signing request (CSR) for the certificate to be signed and issued.
-    String strCSR = csr;
-
-
-    LOG.info("################");
-    LOG.info(strCSR);
-    LOG.info("################");
-
 
     ByteBuffer csrByteBuffer = stringToByteBuffer(strCSR);
     req.setCsr(csrByteBuffer);
